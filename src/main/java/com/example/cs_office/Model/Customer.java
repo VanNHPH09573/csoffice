@@ -43,4 +43,8 @@ public class Customer {
         this.createDate = createDate;
         this.status = status;
     }
+
+    public Customer(String email) {
+        this.email = email;
+    }
 }
