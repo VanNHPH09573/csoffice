@@ -25,6 +25,11 @@ public class CustomerService {
         return customerRepository.findAll();
     }
 
+    public List<Customer> getCustomerByStatus(boolean status) {
+
+        return customerRepository.findCustomerByStatus(status);
+    }
+
     public Optional<Customer> getById(int userId) {
         Optional<Customer> customer = customerRepository.findById(userId);
         return customer;
@@ -53,5 +58,15 @@ public class CustomerService {
 //        if(fullname != null && fullname.length() > 0 && !Objects.equals(user.getFullname(),fullname)){
 //            customer.setFullname(fullname);
 //        }
+    }
+
+    @Transactional
+    public String forgotPassword(String email) {
+        Customer customer = customerRepository.findCustomerByEmail(email);
+        if(customer == null){
+            return "Customer not exist";
+        }else{
+            return customer.getPassword();
+        }
     }
 }
