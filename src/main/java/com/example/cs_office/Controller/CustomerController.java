@@ -19,28 +19,45 @@ public class CustomerController {
         this.customerService = customerService;
     }
 
-    @GetMapping("")
+    //list customer
+    @GetMapping()
     public List<Customer> getCustomer() {
         return customerService.getCustomer();
     }
 
+    //list customer by status == fasle
+    @GetMapping("/false")
+    public List<Customer> getCustomerByStatusFalse() {
+        return customerService.getCustomerByStatus(false);
+    }
+
+    //list customer by status == true
+    @GetMapping("/true")
+    public List<Customer> getCustomerByStatusTrue() {
+        return customerService.getCustomerByStatus(true);
+    }
+
+    // insert customer
     @PostMapping
     public void insertCustomer(@RequestBody Customer customer) {
         customerService.addNewCustomer(customer);
     }
 
+    //search customer by id
     @GetMapping(path = "{customerId}")
     public Optional<Customer> getById(
             @PathVariable("customerId") int customerId) {
         return customerService.getById(customerId);
     }
 
+    //delete customer by id
     @DeleteMapping(path = "{customerId}")
     public void deleteCustomer(
             @PathVariable("customerId") int customerId) {
         customerService.deleteCustomer(customerId);
     }
 
+    //update customer by id
     @PutMapping(path = "{customerId}")
     public void updateCustomer(
             @PathVariable("customerId") int customerId,
@@ -54,5 +71,13 @@ public class CustomerController {
             @RequestParam(required = false) boolean status
     ) {
         customerService.updateCustomer(customerId, phoneNumber, email, password, fisrtName, lastName, address, createDate, status);
+    }
+
+    //forgot password customer by id
+    @GetMapping("/forgot")
+    public void forgotPassword(
+            @RequestParam(required = false) String email
+    ) {
+        customerService.forgotPassword(email);
     }
 }
