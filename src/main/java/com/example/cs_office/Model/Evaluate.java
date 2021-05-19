@@ -36,4 +36,13 @@ public class Evaluate {
     @ManyToOne
     @JoinColumn(name = "id_Order")
     private Order order1;
+
+    public Evaluate(int idUserCreate, int level, String content, Date createDate, boolean status, Order order1) {
+        this.idUserCreate = idUserCreate;
+        this.level = level;
+        this.content = content;
+        this.createDate = createDate;
+        this.status = status;
+        this.order1 = order1;
+    }
 }
