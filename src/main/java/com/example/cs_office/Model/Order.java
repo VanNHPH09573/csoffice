@@ -38,4 +38,12 @@ public class Order {
     @ManyToOne
     @JoinColumn(name = "id_Customer")
     private Customer customer;
+
+    public Order(Date createDate, boolean status, Collection<OrderDetail> orderDetails, Collection<Evaluate> evaluates, Customer customer) {
+        this.createDate = createDate;
+        this.status = status;
+        this.orderDetails = orderDetails;
+        this.evaluates = evaluates;
+        this.customer = customer;
+    }
 }
