@@ -20,7 +20,7 @@ public class CustomerConfig {
 //            Customer customer2 = new Customer(
 //                    4,"0969145287", "vannh@gmail.com", "bao123", "Bao", "Tran","80 Xuan Phuong", new Date(), true
 //            );
-
+//
 //            repository.findCustomerById(4);
 //            repository.saveAll(List.of(customer));
 //            repository.saveAndFlush(customer2);
