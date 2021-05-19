@@ -38,4 +38,10 @@ public class Role {
         this.status = status;
     }
 
+    public Role(String nameRole, Date createDate, boolean status, Collection<Staff> staff) {
+        this.nameRole = nameRole;
+        this.createDate = createDate;
+        this.status = status;
+        this.staff = staff;
+    }
 }
