@@ -46,4 +46,14 @@ public class OrderDetail {
     @ManyToOne
     @JoinColumn(name="id_Room")
     private Room room;
+
+    public OrderDetail(Date createDate, boolean status, Collection<ServiceDetail> serviceDetails, Collection<ScheduleDetail> scheduleDetails, Collection<OrderHistory> orderHistories, Order order, Room room) {
+        this.createDate = createDate;
+        this.status = status;
+        this.serviceDetails = serviceDetails;
+        this.scheduleDetails = scheduleDetails;
+        this.orderHistories = orderHistories;
+        this.order = order;
+        this.room = room;
+    }
 }
