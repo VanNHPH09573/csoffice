@@ -28,4 +28,14 @@ public class OrderHistory {
     @ManyToOne
     @JoinColumn(name = "id_OrderDetail")
     public OrderDetail orderDetail2;
+
+    public OrderHistory(String roomOLd, String startTimeOld, String endTimeOld, Date date, Date createDate, boolean status, OrderDetail orderDetail2) {
+        this.roomOLd = roomOLd;
+        this.startTimeOld = startTimeOld;
+        this.endTimeOld = endTimeOld;
+        this.date = date;
+        this.createDate = createDate;
+        this.status = status;
+        this.orderDetail2 = orderDetail2;
+    }
 }
