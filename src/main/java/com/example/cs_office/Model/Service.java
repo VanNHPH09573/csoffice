@@ -39,4 +39,13 @@ public class Service {
 
     @OneToMany(mappedBy = "service1",fetch = FetchType.EAGER)
     private  Collection<ServiceDetail> serviceDetails;
+
+    public Service(String idPriceService, String nameService, Date createDate, boolean status, Collection<PriceService> priceServices, Collection<ServiceDetail> serviceDetails) {
+        this.idPriceService = idPriceService;
+        this.nameService = nameService;
+        this.createDate = createDate;
+        this.status = status;
+        this.priceServices = priceServices;
+        this.serviceDetails = serviceDetails;
+    }
 }
