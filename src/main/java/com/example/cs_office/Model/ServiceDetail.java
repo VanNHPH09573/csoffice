@@ -35,4 +35,11 @@ public class ServiceDetail {
     @ManyToOne
     @JoinColumn(name="id_OrderDetail")
     private OrderDetail orderDetail;
+
+    public ServiceDetail(Date createDate, boolean status, Service service1, OrderDetail orderDetail) {
+        this.createDate = createDate;
+        this.status = status;
+        this.service1 = service1;
+        this.orderDetail = orderDetail;
+    }
 }
