@@ -29,4 +29,11 @@ public class Schedule {
     @OneToMany(mappedBy = "schedule",fetch = FetchType.EAGER)
     private Collection<ScheduleDetail> scheduleDetails;
 
+    public Schedule(Date startDate, Date endDate, Date createDate, boolean status, Collection<ScheduleDetail> scheduleDetails) {
+        this.startDate = startDate;
+        this.endDate = endDate;
+        this.createDate = createDate;
+        this.status = status;
+        this.scheduleDetails = scheduleDetails;
+    }
 }
