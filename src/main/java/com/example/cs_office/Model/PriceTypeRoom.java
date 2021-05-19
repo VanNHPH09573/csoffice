@@ -22,4 +22,11 @@ public class PriceTypeRoom {
     @ManyToOne
     @JoinColumn(name = "id_TypeRoom")
     private TypeRoom typeRoom1;
+
+    public PriceTypeRoom(double value, Date createDate, boolean status, TypeRoom typeRoom1) {
+        this.value = value;
+        this.createDate = createDate;
+        this.status = status;
+        this.typeRoom1 = typeRoom1;
+    }
 }
