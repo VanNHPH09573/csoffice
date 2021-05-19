@@ -27,4 +27,12 @@ public class TypeRoom {
 
     @OneToMany(mappedBy = "typeRoom1",fetch = FetchType.EAGER)
     private Collection<PriceTypeRoom> priceTypeRooms;
+
+    public TypeRoom(String nameTypeRoom, Date createDate, boolean status, Collection<Room> rooms, Collection<PriceTypeRoom> priceTypeRooms) {
+        this.nameTypeRoom = nameTypeRoom;
+        this.createDate = createDate;
+        this.status = status;
+        this.rooms = rooms;
+        this.priceTypeRooms = priceTypeRooms;
+    }
 }
