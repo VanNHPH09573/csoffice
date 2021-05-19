@@ -43,4 +43,15 @@ public class Staff {
     @JoinColumn(name="id_Branch")
     private Branch branch1;
 
+    public Staff(String userName, String passWord, String phoneNumber, String email, String address, Date createDate, boolean status, Role role, Branch branch1) {
+        this.userName = userName;
+        this.passWord = passWord;
+        this.phoneNumber = phoneNumber;
+        this.email = email;
+        this.address = address;
+        this.createDate = createDate;
+        this.status = status;
+        this.role = role;
+        this.branch1 = branch1;
+    }
 }
