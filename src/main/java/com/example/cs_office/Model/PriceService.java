@@ -33,4 +33,10 @@ public class PriceService {
     @JoinColumn(name="id_Service")
     private Service service;
 
+    public PriceService(double value, Date createDate, boolean status, Service service) {
+        this.value = value;
+        this.createDate = createDate;
+        this.status = status;
+        this.service = service;
+    }
 }
