@@ -10,20 +10,20 @@ import org.springframework.context.annotation.Configuration;
 
 import java.util.Date;
 import java.util.List;
-
-@Configuration
+//
+//@Configuration
 public class RoleConfig {
-    @Bean
-    CommandLineRunner commandLineRunner(RoleRepository repository){
-        return args -> {
-            Role role = new Role(
-                    4, "Bao", new Date(), true
-            );
+//    @Bean
+//    CommandLineRunner commandLineRunner(RoleRepository repository) {
+//        return args -> {
+//            Role role = new Role(
+//                    1, "Trung", new Date(), true
+//            );
 
-            repository.findRoleById(4);
-            repository.saveAll(List.of(role));
-//            repository.saveAndFlush(customer2);
+//            repository.findRoleById(4);
+//            repository.saveAll(List.of(role));
+//            repository.saveAndFlush(role);
 //            repository.deleteById(2);
-        };
-    }
+//        };
+//    }
 }
