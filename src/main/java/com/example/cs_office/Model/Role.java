@@ -4,8 +4,10 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
+import java.util.Collection;
 import java.util.Date;
 
 @Getter
@@ -14,18 +16,24 @@ import java.util.Date;
 @AllArgsConstructor
 
 @Entity
-@Table(name = "Role")
+@Table(name = "role")
 public class Role {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue
     private int id;
-    private String name;
+    @Column(name = "name")
+    private String nameRole;
     @Column(name = "create_Date")
+    @Temporal(TemporalType.DATE)
+    @DateTimeFormat(pattern = "MM/dd/yyyy")
     private Date createDate;
     private boolean status;
 
-    public Role(String name, Date createDate, boolean status) {
-        this.name = name;
+    @OneToMany(mappedBy = "role",fetch = FetchType.EAGER)
+    private Collection<Staff> staff;
+
+    public Role(String nameRole, Date createDate, boolean status) {
+        this.nameRole = nameRole;
         this.createDate = createDate;
         this.status = status;
     }
