@@ -31,4 +31,13 @@ public class Room {
     @ManyToOne
     @JoinColumn(name = "id_TypeRoom")
     private TypeRoom typeRoom;
+
+    public Room(String nameRoom, Date createDate, boolean status, Collection<OrderDetail> orderDetails, Branch branch, TypeRoom typeRoom) {
+        this.nameRoom = nameRoom;
+        this.createDate = createDate;
+        this.status = status;
+        this.orderDetails = orderDetails;
+        this.branch = branch;
+        this.typeRoom = typeRoom;
+    }
 }
