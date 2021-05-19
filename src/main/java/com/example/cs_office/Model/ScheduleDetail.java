@@ -34,4 +34,15 @@ public class ScheduleDetail {
     @ManyToOne
     @JoinColumn(name = "id_Shedule")
     private Schedule schedule;
+
+    public ScheduleDetail(String startTime, String endTime, Date date, Date editDate, Date createDate, boolean status, OrderDetail orderDetail1, Schedule schedule) {
+        this.startTime = startTime;
+        this.endTime = endTime;
+        this.date = date;
+        this.editDate = editDate;
+        this.createDate = createDate;
+        this.status = status;
+        this.orderDetail1 = orderDetail1;
+        this.schedule = schedule;
+    }
 }
